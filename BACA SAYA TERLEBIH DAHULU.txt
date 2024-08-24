@@ -1,0 +1,20 @@
+[UPDATE 27/11/2023]
+🚀 Peluncuran Tutorial Mini Project di GitHub
+Saya senang mengumumkan bahwa saya telah menambahkan serangkaian tutorial untuk menjawab atau membuat mini project pada GitHub repository saya. Tutorial ini dirancang untuk memberikan panduan langkah demi langkah dalam menyelesaikan berbagai tantangan yang terkait dengan data science dan machine learning.
+
+Repository: Madugital Tutorials GitHub
+📌 Sebelum Anda Mulai:
+Kreativitas Anda di Utamakan: Sebelum melihat isi repository, kami mendorong Anda untuk mencoba dan menyelesaikan mini project yang Anda pilih secara mandiri. Hal ini bertujuan untuk mengasah keterampilan dan kreativitas Anda.
+
+Baca README.md: Setelah Anda mencoba sendiri, silakan kunjungi repository dan mulailah dengan membaca file README.md. Ini akan memberikan Anda gambaran umum tentang struktur dan tujuan dari tutorial yang disediakan.
+
+Ikuti Langkah di Notebook: Dalam repository, Anda akan menemukan beberapa notebook (dari 02 sampai 06). Ikuti langkah-langkah dalam notebook ini secara berurutan untuk mendapatkan pemahaman yang lebih mendalam tentang cara penyelesaian project.
+
+Keselarasan Versi Package: Pastikan bahwa package yang Anda gunakan di laptop/komputer Anda memiliki versi yang sama dengan yang tercantum di requirements.txt. Kesesuaian versi ini sangat penting untuk memastikan bahwa kode berjalan dengan lancar tanpa adanya masalah kompatibilitas.
+
+Feedback dan Kontribusi: Kami menghargai feedback dan kontribusi Anda! Jika Anda memiliki saran atau ingin berkontribusi pada tutorial, silakan buat diskusi di Telegram.
+
+🎯 Tujuan Tutorial:
+Tutorial ini bertujuan untuk memberikan panduan praktis dalam menerapkan konsep-konsep penting di bidang data science dan machine learning. Dengan mengikuti tutorial ini, Anda akan mendapatkan keahlian yang lebih mendalam dan praktis dalam menangani proyek nyata di bidang ini.
+
+Selamat mencoba dan semoga tutorial ini memberikan manfaat yang besar untuk pengembangan keahlian Anda!
