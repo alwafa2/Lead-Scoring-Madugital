@@ -1,19 +1,18 @@
 # Lead Scoring Madugital
 Proyek ini bertujuan untuk membangun model machine learning yang dapat memprediksi kemungkinan konversi prospek (leads) menjadi pelanggan. Dengan model ini, tim pemasaran dan penjualan dapat memprioritaskan prospek yang memiliki peluang konversi tinggi, sehingga meningkatkan efisiensi dan efektivitas strategi pemasaran.
 
-#  Struktur Proyek
+## 🗂️  Struktur Proyek
+```
+.
+├── data/                         # Dataset dan file pendukung
+├── model/                        # File model yang sudah dilatih (jika ada)
+├── madu.ipynb                    # Notebook utama untuk eksplorasi dan modeling
+├── BACA SAYA TERLEBIH DAHULU.txt # Catatan awal penggunaan proyek
+├── README.md                     # Dokumentasi proyek
+└── .gitattributes                # Pengaturan atribut Git
+```
 
-├── data/                 # Berisi dataset yang digunakan
-
-├── model/                # Menyimpan model yang telah dilatih
-
-├── madu.ipynb            # Notebook utama untuk analisis dan pemodelan
-
-├── README.md             # Dokumentasi proyek
-
-└── .gitattributes        # Pengaturan atribut Git
-
-#  Teknologi dan Library
+## 🧰  Teknologi dan Library
 Proyek ini dibangun menggunakan Python dengan bantuan berbagai library:
 
 - `pandas`, `numpy` – manipulasi dan analisis data
@@ -26,7 +25,7 @@ Proyek ini dibangun menggunakan Python dengan bantuan berbagai library:
   - Optimasi: `RandomizedSearchCV`
   - Data splitting: `train_test_split`
  
-# Output & Evaluasi Model
+## 📈 Output & Evaluasi Model
 Beberapa model dikembangkan dan dievaluasi dengan metrik precision, recall, f1-score, dan accuracy. Berikut ringkasannya:
 
 | Model                      | Accuracy | F1 Score |
@@ -36,7 +35,7 @@ Beberapa model dikembangkan dan dievaluasi dengan metrik precision, recall, f1-s
 | Random Forest              | 94%      | 0.93     |
 | **Random Forest (tuning)** | **94%**  | **0.93** |
 
-## Best Parameters (Random Forest):
+**Best Parameters (Random Forest)**
 
    ```python
 {
@@ -49,36 +48,93 @@ Beberapa model dikembangkan dan dievaluasi dengan metrik precision, recall, f1-s
 }
 ```
 
-# Fitur Terpenting
+## 🔍 Fitur Terpenting
 Model Random Forest menunjukkan bahwa fitur-fitur berikut memiliki kontribusi signifikan dalam prediksi konversi lead:
 
-1. Tags_Will revert after reading the email
-
-2. Total Time Spent on Website
-
-3. Last Notable Activity_SMS Sent
-
-4. Tags_Ringing
-
-5. Lead Profile_Potential Lead
-
-6. Tags_Not Specified
-
-7. Lead Quality_Might be
-
-8. Tags_Closed by Horizzon
-
-9. Tags_Lost to EINS
-
-10. Lead Quality_Not Specified
+- `Tags_Will revert after reading the email`
+- `Total Time Spent on Website`
+- `Last Notable Activity_SMS Sent`
+- `Tags_Ringing`
+- `Lead Profile_Potential Lead`
+- `Tags_Not Specified`
+- `Lead Quality_Might be`
+- `Tags_Closed by Horizzon`
+- `Tags_Lost to EINS`
+- `Lead Quality_Not Specified`
 
 Fitur-fitur ini dapat menjadi fokus utama dalam strategi pemasaran digital perusahaan.
 
+## 🚀 Deployment dan Prediksi Individual
 
-##  Cara Menjalankan
+Setelah model dan preprocessor disimpan, kamu bisa memuatnya kembali dan melakukan prediksi terhadap satu input data baru.
 
- Clone repositori ini:
+### 🔒 Menyimpan Model dan Preprocessor
+
+```python
+if not os.path.exists('model'):
+    os.mkdir('model')
+
+pickle.dump(best_rf_model, open('model/best_rf_model.sav', 'wb'))
+pickle.dump(preprocessor, open('model/preprocessor.sav', 'wb'))
+```
+
+### 📤 Memuat dan Menggunakan Model
+
+```python
+best_rf_model = pickle.load(open('model/best_rf_model.sav', 'rb'))
+preprocessor = pickle.load(open('model/preprocessor.sav', 'rb'))
+
+data = { 'Prospect ID': '2a369e36-ca95-4ca9-9e4f-9d27175aa320', ... }
+
+data_df = pd.DataFrame([data])
+data_preprocessed = preprocessor.transform(data_df)
+probability = best_rf_model.predict_proba(data_preprocessed)[0][1]
+score = round(probability * 100, 2)
+
+if probability < 0.5:
+    category = 'COLD'
+elif probability >= 0.75:
+    category = 'HOT'
+else:
+    category = 'WARM'
+
+print(f"Customer dengan ID {data['Prospect ID']} masuk kategori {category} leads dengan score: {score}")
+```
+
+📌 **Contoh Output**:
+
+```
+Customer dengan ID 2a369e36-ca95-4ca9-9e4f-9d27175aa320, masuk dalam kategori HOT leads, dengan score : 84.95
+```
+
+
+## 🚀 Cara Menjalankan
+
+1. Clone repositori ini:
 
    ```bash
    git clone https://github.com/alwafa2/Lead-Scoring-Madugital.git
    cd Lead-Scoring-Madugital
+   ```
+
+2. (Opsional) Buat virtual environment dan aktifkan:
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # Linux/Mac
+   venv\Scripts\activate   # Windows
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   pip install pandas numpy matplotlib scikit-learn
+   ```
+
+4. Jalankan notebook:
+
+   ```bash
+   jupyter notebook madu.ipynb
+   ```
+
+
