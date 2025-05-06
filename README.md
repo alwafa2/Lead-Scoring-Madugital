@@ -14,17 +14,65 @@ Proyek ini bertujuan untuk membangun model machine learning yang dapat mempredik
 └── .gitattributes        # Pengaturan atribut Git
 
 #  Teknologi dan Library
-- Python 3.x
+Proyek ini dibangun menggunakan Python dengan bantuan berbagai library:
 
-- Jupyter Notebook
+- `pandas`, `numpy` – manipulasi dan analisis data
+- `matplotlib.pyplot` – visualisasi data
+- `os`, `pickle` – manajemen file dan penyimpanan model
+- `scikit-learn`:
+  - Model: `LogisticRegression`, `DecisionTreeClassifier`, `RandomForestClassifier`, `LinearRegression`, `KMeans`
+  - Preprocessing: `StandardScaler`, `MinMaxScaler`
+  - Evaluasi: `classification_report`, `f1_score`
+  - Optimasi: `RandomizedSearchCV`
+  - Data splitting: `train_test_split`
+ 
+# Output & Evaluasi Model
+Beberapa model dikembangkan dan dievaluasi dengan metrik precision, recall, f1-score, dan accuracy. Berikut ringkasannya:
 
-- Pandas
+| Model                      | Accuracy | F1 Score |
+| -------------------------- | -------- | -------- |
+| Logistic Regression        | 94%      | 0.92     |
+| Decision Tree              | 92%      | 0.90     |
+| Random Forest              | 94%      | 0.93     |
+| **Random Forest (tuning)** | **94%**  | **0.93** |
 
-- NumPy
+## Best Parameters (Random Forest):
 
-- Scikit-learn
+   ```python
+{
+  'n_estimators': 1000,
+  'min_samples_split': 7,
+  'min_samples_leaf': 1,
+  'max_features': 'sqrt',
+  'max_depth': 70,
+  'bootstrap': True
+}
+```
 
-- Matplotlib / Seaborn (untuk visualisasi)
+# Fitur Terpenting
+Model Random Forest menunjukkan bahwa fitur-fitur berikut memiliki kontribusi signifikan dalam prediksi konversi lead:
+
+1. Tags_Will revert after reading the email
+
+2. Total Time Spent on Website
+
+3. Last Notable Activity_SMS Sent
+
+4. Tags_Ringing
+
+5. Lead Profile_Potential Lead
+
+6. Tags_Not Specified
+
+7. Lead Quality_Might be
+
+8. Tags_Closed by Horizzon
+
+9. Tags_Lost to EINS
+
+10. Lead Quality_Not Specified
+
+Fitur-fitur ini dapat menjadi fokus utama dalam strategi pemasaran digital perusahaan.
 
 
 ##  Cara Menjalankan
