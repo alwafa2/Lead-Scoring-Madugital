@@ -7,7 +7,6 @@ Proyek ini bertujuan untuk membangun model machine learning yang dapat mempredik
 ├── data/                         # Dataset dan file pendukung
 ├── model/                        # File model yang sudah dilatih (jika ada)
 ├── madu.ipynb                    # Notebook utama untuk eksplorasi dan modeling
-├── BACA SAYA TERLEBIH DAHULU.txt # Catatan awal penggunaan proyek
 ├── README.md                     # Dokumentasi proyek
 └── .gitattributes                # Pengaturan atribut Git
 ```
