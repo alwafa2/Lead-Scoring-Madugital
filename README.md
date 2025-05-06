@@ -9,8 +9,6 @@ Proyek ini bertujuan untuk membangun model machine learning yang dapat mempredik
 
 ├── madu.ipynb            # Notebook utama untuk analisis dan pemodelan
 
-├── BACA SAYA TERLEBIH DAHULU.txt  # Instruksi awal penggunaan proyek
-
 ├── README.md             # Dokumentasi proyek
 
 └── .gitattributes        # Pengaturan atribut Git
