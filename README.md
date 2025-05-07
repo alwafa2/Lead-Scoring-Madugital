@@ -136,4 +136,9 @@ Customer dengan ID 2a369e36-ca95-4ca9-9e4f-9d27175aa320, masuk dalam kategori HO
    jupyter notebook madu.ipynb
    ```
 
+## 🤝 Kontribusi
 
+Kontribusi sangat terbuka! Silakan fork proyek ini dan ajukan *pull request*, atau buka *issue* jika ada masukan atau masalah.
+
+## 📄 Lisensi
+MIT License © 2025 Muhammad Nailul Wafa
